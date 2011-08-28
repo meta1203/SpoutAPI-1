@@ -27,6 +27,7 @@ import org.getspout.spoutapi.keyboard.KeyboardManager;
 import org.getspout.spoutapi.packet.PacketManager;
 import org.getspout.spoutapi.player.AppearanceManager;
 import org.getspout.spoutapi.player.BiomeManager;
+import org.getspout.spoutapi.player.CustomBlockManager;
 import org.getspout.spoutapi.player.FileManager;
 import org.getspout.spoutapi.player.PlayerManager;
 import org.getspout.spoutapi.player.SkyManager;
@@ -47,6 +48,7 @@ public class SpoutManager {
 	private CacheManager cacheManager = null;
 	private ChunkDataManager chunkDataManager = null;
 	private FileManager fileManager = null;
+	private CustomBlockManager customBlockManager = null;
 	
 	protected SpoutManager(){
 
@@ -253,4 +255,15 @@ public class SpoutManager {
 	public static PlayerManager getPlayerManager() {
 		return getInstance().playerManager;
 	}
+	
+	public static CustomBlockManager getCustomBlockManager() {
+		return getInstance().customBlockManager;
+	}
+	
+	public void setCustomBlockManager(CustomBlockManager cbm) {
+		if (customBlockManager == null) {
+			customBlockManager = cbm;
+		}
+	}
+
 }
